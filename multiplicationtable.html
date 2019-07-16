@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MULTIPLICATION TABLE</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<center>
+		<fieldset>
+			<legend>MULTIPLICATION TABLE</legend>
+		<div><label>Block</label><input type="text" id="a"> </div><br>
+		<div><label>Lines</label><input type="text" id="b"></input> </div>
+
+		<button onclick="generate()">Generate</button>
+</fieldset>
+</center>
+<div id="show"></div>
+</body>
+		<script type="text/javascript">
+			function generate() {
+				var cc;
+						var aa = a.value;
+						var bb = b.value;
+						cc = "<table border=1><tr>";						
+						for (var i = 1; i <= aa; i++) {	
+						cc += "<td>";
+						cc += i + "times";
+						cc += "<table>";					
+							for (var v = 1; v <= bb; v++) 
+							{ 
+
+								cc+="<tr><td>"+ i + "*" + v + "=" + i * v + "</td></tr>";								
+						}							
+							 cc+="</table></td>";
+						}
+						 	
+							cc+= "</tr></table>";
+								show.innerHTML =cc;
+					}		
+			
+		</script>
+
+</html>
