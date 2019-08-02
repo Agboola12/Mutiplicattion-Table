@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+	<style type="text/css">
+
+		button{
+			background-color: orange;
+			color: white;
+			width: 80px;
+			height: 30px;
+		}
+	</style>
+	
+</head>
+<body bgcolor="lightgrey">
+		Name:   <input type="text" name=""  id="aa" style="margin-left: 13px"> <br></br>
+		Mail:   <input type="text"  name="" id="bb" style="margin-left: 21px"> <br></br>
+		Dept:   <input type="text" name=""  id="cc" style="margin-left: 20px"> <br></br>
+		Level:  <input type="text" name="" id="dd"  style="margin-left: 15px"> <br></br>
+		<button onclick="myAdd()" style="margin-left: 80px" id="add">Add</button> <br></br>
+		
+		E-mail<input type="text" name="" id=test style="margin-left: 21px"> <br></br>
+		<button onclick="myLogin()"  id="login" style="margin-left: 80px">Login</button>
+
+		<div id="result"></div>
+		<div id="answer"></div>
+		<script type="text/javascript">
+			// var rr =  result.value;
+			std=[];
+			show=[];
+
+		function myAdd() {
+			
+			document.getElementById('aa');
+			document.getElementById('bb');
+			document.getElementById('cc');
+			document.getElementById('dd');
+
+
+			var details = {Name:aa.value, Mail:bb.value, Dept:cc.value, Level:dd.value};
+
+			st = localStorage.getItem('students');
+   			if (!st) {
+   				std = [];
+   				std.push(details);
+   				std = JSON.stringify(std);
+   				localStorage.setItem('students' , std);
+   			}
+			else {
+				arr = JSON.parse(localStorage.getItem('students'	));
+				arr.push(details);
+				arr = JSON.stringify(arr);
+				localStorage.setItem('students' , arr);
+			}
+			show = JSON.parse(localStorage.getItem('students'));
+			answer.innerHTML += students;
+			// console.log(show);
+			
+			}
+
+			function myLogin(){
+				// class = [];
+				localStorage.getItem(bb.value);
+				if (login=== bb.value) {
+					alert('registered');
+				}
+				else{
+					alert('not registered')
+				}
+			}
+		
+	</script>
+</body>
+</html>
